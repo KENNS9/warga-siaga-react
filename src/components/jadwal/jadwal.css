@@ -129,3 +129,18 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .table-container {
+    width: 100%;
+  }
+
+  .table-text h1 {
+    font-size: 30px;
+  }
+
+  th, td {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

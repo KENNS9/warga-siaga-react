@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="footer">
             {/* Left Section */}
             <div className="footer-left">
-                <img src="Foto/logo.png" alt="Logo" className="footer-logo" />
+                <img src="/images/logo.png" alt="Logo" className="footer-logo" />
                 <p className="footer-title">Sebuah Cerita Sederhana Tentang Keamanan Lingkungan Warga</p>
                 <p>
                     Website ronda dan keamanan lingkungan kami hadir untuk mendukung

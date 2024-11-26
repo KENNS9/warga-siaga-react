@@ -1,7 +1,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins";
+  font-family: 'Poppins';
 }
 
 body {
@@ -20,7 +20,7 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
-  background-image: url('/celerates/warga-siaga/public/images/city.jpg');
+  background: url("../../assets/img/city.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -121,7 +121,8 @@ body {
   padding: 40px;
   justify-content: center;
   background-color: #e8f5e9;
-  margin-left: 100px;
+  align-items: center;
+
 }
 
 .row {
@@ -133,12 +134,12 @@ body {
   height: 440px;
   border-radius: 12px;
   object-fit: cover;
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 .post-text {
   max-width: 500px;
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 .post-text h2 {
@@ -149,7 +150,7 @@ body {
 }
 
 .post-text p {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   margin-bottom: 15px;
   color: #555;

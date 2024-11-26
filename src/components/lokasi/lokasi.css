@@ -27,11 +27,12 @@ body {
 }
 
 /* Content */
-.content {
+.location {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 80px;
+  gap: 20px;
+  padding: 20px;
 }
 
 /* Location box */
@@ -39,8 +40,9 @@ body {
   background-color: #f5f8f7;
   border: 1px solid #c5d9c5;
   border-radius: 10px;
-  width: 40%;
+  width: 45%;
   overflow: hidden;
+  flex: 1;
 }
 
 .location-header {
@@ -76,7 +78,7 @@ body {
 
 /* Map box */
 .map-box {
-  width: 55%;
+  width: 45%;
   height: 400px;
   border: 1px solid #c5d9c5;
   border-radius: 10px;

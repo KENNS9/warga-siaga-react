@@ -10,7 +10,7 @@ function App() {
     return (
         <div>
             {/* Navbar */}
-            <Navbar />@
+            <Navbar />
 
             {/* Hero Section */}
             <div id="beranda" className="hero-section">
@@ -30,7 +30,7 @@ function App() {
                 </div>
                 <div className="search-input">
                     <label htmlFor="date">Tanggal</label>
-                    <input type="text" id="date" placeholder="HH/BB/TTTT" />
+                    <input type="date" id="tanggal" required />
                 </div>
                 <button className="search-button">Cari Sekarang</button>
             </section>
@@ -41,8 +41,8 @@ function App() {
                     <div className="col-md-6">
                         <img src="/images/kemanan.jpg" alt="Keamanan" className="img-fluid" />
                     </div>
-                    <div className="col-md-5">
-                        <div className="post-text">
+                    <div className="col-md-6">
+                        <div className="post-text" style={{ marginLeft: "30px" }}>
                             <h2>Edukasi Keamanan</h2>
                             <p>Keamanan adalah prioritas yang penting dalam kehidupan sehari-hari. Dengan langkah sederhana seperti mengunci rumah, menjaga kerahasiaan data pribadi, dan menggunakan kata sandi yang kuat, kita bisa mencegah berbagai risiko. Kesadaran dan tindakan kecil ini membantu menciptakan lingkungan yang lebih aman untuk semua.</p>
                             <a href="#" className="read-more">Selengkapnya ↗</a>
@@ -51,7 +51,7 @@ function App() {
                 </div>
 
                 <div className="row align-items-center">
-                    <div className="col-md-5 order-2">
+                    <div className="col-md-6 order-2">
                         <img src="/images/ronda.jpg" alt="Ronda" className="img-fluid" />
                     </div>
                     <div className="col-md-6">
@@ -122,29 +122,29 @@ function App() {
                 </div>
                 <div className="gallery-container">
                     <div className="gallery-item">
-                        <img src="Foto/pos1.jpg" alt="Pos 1" />
+                        <img src="/images/ronda.jpg" alt="Pos 1" />
                         <div className="gallery-text">
                             <p>Pos 1</p>
                             <button>Lihat</button>
                         </div>
                     </div>
                     <div className="gallery-item">
-                        <img src="Foto/pos2.jpg" alt="Pos 2" />
+                        <img src="/images/pos2.jpg" alt="Pos 2" />
                         <p>Pos 2</p>
                         <button>Lihat</button>
                     </div>
                     <div className="gallery-item">
-                        <img src="Foto/pos3.jpg" alt="Pos 3" />
+                        <img src="/images/pos3.jpg" alt="Pos 3" />
                         <p>Pos 3</p>
                         <button>Lihat</button>
                     </div>
                     <div className="gallery-item">
-                        <img src="Foto/pos4.jpg" alt="Pos 4" />
+                        <img src="/images/pos4.jpg" alt="Pos 4" />
                         <p>Pos 4</p>
                         <button>Lihat</button>
                     </div>
                     <div className="gallery-item">
-                        <img src="Foto/pos5.jpg" alt="Pos 5" />
+                        <img src="/images/pos5.jpg" alt="Pos 5" />
                         <p>Pos 5</p>
                         <button>Lihat</button>
                     </div>

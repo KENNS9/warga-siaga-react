@@ -13,7 +13,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 80px;
 }
 
 .right-section img {
@@ -66,9 +65,9 @@ body {
   padding: 20px 0;
 }
 .testimoni h2 {
-  font-size: 28px;
+  font-size: 60px;
   font-weight: bold;
-  color: #222;
+  color: #263238;
 }
 .testimoni-container {
   display: flex;

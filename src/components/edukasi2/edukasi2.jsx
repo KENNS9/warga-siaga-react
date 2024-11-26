@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../navbar/navbar'; 
 import Footer from '../footer/footer';
+import './edukasi2.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -12,14 +13,14 @@ const Edukasi2 = () => {
   return (
     <div>
       <Navbar />
-      <div className="container">
+      <div className="Video">
         <h1>Video Edukasi</h1>
         <div className="main-content">
           <div className="main-video">
             <img
               alt="Video thumbnail showing a security patrol in action"
-              src="img/patrol.jpg"
-              onClick={() => openLink('https://www.youtube.com/watch?v=example1')}
+              src="/images/ronda.jpg"
+              onClick={() => openLink('https://www.youtube.com/watch?v=uGfIUsy37D8')}
             />
             <div className="video-info">
               <h2>Tips &amp; Trick - Beberapa tips agar ronda lebih efektif dan aman.</h2>
@@ -35,24 +36,24 @@ const Edukasi2 = () => {
             </div>
           </div>
           <div className="sidebar">
-            <div className="card">
+            <div className="box">
               <img
                 alt="Image of a laptop with code on the screen"
-                src="img/img3.jpg"
+                src="/images/img3.jpg"
                 onClick={() => openLink('https://www.youtube.com/watch?v=example2')}
               />
-              <div className="card-info">
+              <div className="box-info">
                 <h3>Pemanfaatan teknologi untuk mendukung keamanan lingkungan.</h3>
                 <p className="meta">Admin . 123 tayangan . 3 hari lalu</p>
               </div>
             </div>
-            <div className="card">
+            <div className="box">
               <img
                 alt="Image of security personnel in action at night"
-                src="img/img4.jpg"
+                src="/images/img4.jpg"
                 onClick={() => openLink('https://www.youtube.com/watch?v=example3')}
               />
-              <div className="card-info">
+              <div className="box-info">
                 <h3>Keamanan Lingkungan: Tanggung jawab kita bersama.</h3>
                 <p className="meta">Admin . 347 tayangan . 2 minggu lalu</p>
               </div>

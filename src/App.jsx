@@ -14,6 +14,14 @@ import CheckEmail from "./components/CheckEmail/CheckEmail";
 import GoogleRegist from "./components/GoogleRegist/GoogleRegist";
 import LoadingRegistGoogle from "./components/LoadingRegistGoogle/LoadingRegistGoogle";
 import Homepage from "./components/home page/home-page";
+import AboutUs from "./components/about us/aboutUs";
+import JadwalRonda from "./components/jadwal/jadwal";
+import Lokasi from "./components/lokasi/lokasi";
+import Edukasi1 from "./components/edukasi1/edukasi1";
+import Edukasi2 from "./components/edukasi2/edukasi2";
+// import Pelaporan from "./components/pelaporan/pelaporan";
+// import { LaporanCard } from "./components/laporan-card/laporan-card";
+// import UploaderFile from "./components/uploader-file/uploader-file";
 
 
 function App() {
@@ -30,11 +38,17 @@ function App() {
         <Route path="/berhasil-reset-password" element={<ResetBerhasil />} />
         <Route path="/check-email" element={<CheckEmail />} />
         <Route path="/daftar-dengan-google" element={<GoogleRegist />} />
-        <Route
-          path="/loading-daftar-google"
-          element={<LoadingRegistGoogle />}
-        />
+        <Route path="/loading-daftar-google" element={<LoadingRegistGoogle />}/>
         <Route path="/dashboard" element={<Homepage />} /> 
+        <Route path="/aboutUs" element={<AboutUs />} />
+        <Route path="/jadwal" element={<JadwalRonda />} />
+        <Route path="/lokasi/:id" element={<Lokasi />} />
+        <Route path="/edukasi1" element={<Edukasi1 />} />
+        <Route path="/edukasi2" element={<Edukasi2 />} />
+        {/* <Route path="/pelaporan" element={<Pelaporan />} />
+        <Route path="/laporan-card" element={<LaporanCard />} />
+        <Route path="/uploader-file" element={<UploaderFile />} /> */}
+        
       </Routes>
     </Router>
   );

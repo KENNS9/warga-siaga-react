@@ -20,7 +20,7 @@ const AboutUs = () => {
             </div>
           </div>
           <div className="right-section">
-            <img src="Foto/kemanan.jpg" alt="Security Image" />
+            <img src="/images/kemanan.jpg" alt="Security Image" />
           </div>
         </div>
 
@@ -37,17 +37,17 @@ const AboutUs = () => {
           <h2>TESTIMONI</h2>
           <div className="testimoni-container">
             <div className="card">
-              <img src="Foto/pak-rt.jpg" alt="Pak RT" />
+              <img src="/images/pak-rt.jpg" alt="Pak RT" />
               <h3>Pak RT</h3>
               <p>“Saya jadi terbantu dan tidak ngedata manual”</p>
             </div>
             <div className="card">
-              <img src="Foto/bpk-aji.jpg" alt="Bapak Aji" />
+              <img src="/images/bpk-aji.jpg" alt="Bapak Aji" />
               <h3>Bapak Aji</h3>
               <p>“Mantap saya jadi rajin patroli”</p>
             </div>
             <div className="card">
-              <img src="Foto/ibu-rina.jpg" alt="Ibu Rina" />
+              <img src="/images/ibu-rina.jpg"alt="Ibu Rina" />
               <h3>Ibu Rina</h3>
               <p>“Jadi gampang ngeliat keamanan kampung tinggal buka web ini aja”</p>
             </div>
