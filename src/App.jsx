@@ -19,6 +19,9 @@ import JadwalRonda from "./components/jadwal/jadwal";
 import Lokasi from "./components/lokasi/lokasi";
 import Edukasi1 from "./components/edukasi1/edukasi1";
 import Edukasi2 from "./components/edukasi2/edukasi2";
+import Admin from "./components/admin landing page/admin";
+import EdukasiAdmin from "./components/edukasi admin/edukasi_admin";
+import JadwalAdmin from "./components/jadwal admin/jadwal_admin";
 // import Pelaporan from "./components/pelaporan/pelaporan";
 // import { LaporanCard } from "./components/laporan-card/laporan-card";
 // import UploaderFile from "./components/uploader-file/uploader-file";
@@ -51,6 +54,9 @@ function App() {
         <Route path="/lokasi/:id" element={<Lokasi />} />
         <Route path="/edukasi1" element={<Edukasi1 />} />
         <Route path="/edukasi2" element={<Edukasi2 />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/jadwal_admin" element={<JadwalAdmin />} />
+        <Route path="/edukasi_admin" element={<EdukasiAdmin />} />
         {/* <Route path="/pelaporan" element={<Pelaporan />} />
         <Route path="/laporan-card" element={<LaporanCard />} />
         <Route path="/uploader-file" element={<UploaderFile />} /> */}
