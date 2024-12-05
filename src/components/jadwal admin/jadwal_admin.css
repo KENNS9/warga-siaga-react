@@ -199,6 +199,10 @@ tr:not(:last-child) td {
   z-index: 1000;
 }
 
+.popup-container.show {
+  display: flex;
+}
+
 /* Popup Content */
 .popup-content {
   background: white;

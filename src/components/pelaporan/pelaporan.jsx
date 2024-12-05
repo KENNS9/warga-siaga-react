@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { LaporanCard } from "../components/laporan-card";
-import DragNdrop from "../components/uploader-file";
+import { LaporanCard } from "../laporan-card/laporan-card";
+import '../setting/index.css'
+import DragNdrop from "../uploader-file/uploader-file";
 import Navbar from '../navbar/navbar'; 
 import Footer from '../footer/footer';
 
@@ -152,8 +153,8 @@ export const Pelaporan = () => {
   };
 
   return (
- 
     <main className="bg-primaryBg min-h-screen">
+      <Navbar />
       <div className="container py-16 grid grid-cols-2 gap-10">
         <div>
           <div>
@@ -250,6 +251,7 @@ export const Pelaporan = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 };

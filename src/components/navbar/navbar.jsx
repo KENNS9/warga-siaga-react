@@ -8,7 +8,7 @@ const Navbar = () => {
             <div className="container">
                 {/* Logo Section */}
                 <Link to="/home_page" className="navbar-brand d-flex align-items-center">
-                    <img src="Foto/logo.png" alt="Logo" className="logo" />
+                    <img src="/images/logo.png" alt="Logo" className="logo" />
                 </Link>
 
                 {/* Toggle button for mobile view */}
@@ -28,7 +28,7 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav me-3">
                         <li className="nav-item">
-                            <Link to="/home_page" className="nav-link">Beranda</Link>
+                            <Link to="/dashboard" className="nav-link">Beranda</Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/aboutUs" className="nav-link">Tentang Kami</Link>
@@ -37,17 +37,17 @@ const Navbar = () => {
                             <Link to="/jadwal" className="nav-link">Jadwal Ronda</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="#" className="nav-link">Edukasi</Link>
+                            <Link to="/edukasi1" className="nav-link">Edukasi</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="#" className="nav-link">Pelaporan</Link>
+                            <Link to="/pelaporan" className="nav-link">Pelaporan</Link>
                         </li>
                     </ul>
 
                     {/* Profile Section */}
                     <div className="profile d-flex align-items-center">
                         <img 
-                            src="Foto/profile-pic.jpg" 
+                            src="/images/profile-pic.jpg" 
                             alt="Profile Picture" 
                             className="profile-pic" 
                         />

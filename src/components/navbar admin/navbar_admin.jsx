@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="container">
         {/* Logo Section */}
         <a className="navbar-brand d-flex align-items-center" href="home_page.html">
-          <img src="Foto/logo.png" alt="Logo" className="logo" />
+          <img src="/images/logo.png" alt="Logo" className="logo" />
         </a>
 
         {/* Toggle button for mobile view */}
@@ -28,13 +28,13 @@ const Navbar = () => {
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav me-3">
             <li className="nav-item">
-              <a className="nav-link" href="admin.html">Beranda</a>
+              <Link to="/admin" className="nav-link">Beranda</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="jadwal_admin.html">Jadwal Ronda</a>
+              <Link to="/jadwal_admin" className="nav-link">Jadwal Ronda</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" to="./edukasi_admin">Edukasi</a>
+              <Link to="/edukasi_admin" className="nav-link">Edukasi</Link>
             </li>
           </ul>
 

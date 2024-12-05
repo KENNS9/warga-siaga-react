@@ -13,7 +13,7 @@ const LoginAdmin = () => {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    navigate("/dashboard");
+    navigate("/admin");
   };
 
   return (

@@ -22,6 +22,12 @@ import Edukasi2 from "./components/edukasi2/edukasi2";
 // import Pelaporan from "./components/pelaporan/pelaporan";
 // import { LaporanCard } from "./components/laporan-card/laporan-card";
 // import UploaderFile from "./components/uploader-file/uploader-file";
+import Admin from "./components/admin landing page/admin";
+import EdukasiAdmin from "./components/edukasi admin/eduksai_admin";
+import JadwalAdmin from "./components/jadwal admin/jadwal_admin";
+import PopupTambahPetugas from "./components/jadwal admin/PopupTambahPetugas";
+import PopupHapusJadwal from "./components/jadwal admin/PopupHapusJadwal";
+import PopupEditPetugas from "./components/jadwal admin/PopupEditPetugas";
 
 
 function App() {
@@ -48,6 +54,13 @@ function App() {
         {/* <Route path="/pelaporan" element={<Pelaporan />} />
         <Route path="/laporan-card" element={<LaporanCard />} />
         <Route path="/uploader-file" element={<UploaderFile />} /> */}
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/jadwal_admin" element={<JadwalAdmin />} />
+        <Route path="/tambah_petugas" element={<PopupTambahPetugas />} />
+        <Route path="/hapus_jadwal" element={<PopupHapusJadwal />} />
+        <Route path="/edit+petugas" element={<PopupEditPetugas />} />
+        <Route path="/edukasi_admin" element={<EdukasiAdmin />} />
+
         
       </Routes>
     </Router>

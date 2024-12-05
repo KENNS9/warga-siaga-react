@@ -6,41 +6,103 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const WargaSiagaAdmin = () => {
+  const posData = {
+    1:[
+    { id: 1, name: "Bapak Aji", status: "Belum dimulai", date: "30-10-2024" },
+    { id: 2, name: "Bapak Budi", status: "Sedang Berlangsung", date: "28-10-2024" },
+    { id: 3, name: "Bapak Joko", status: "Selesai", date: "27-10-2024" },
+    { id: 4, name: "Bapak Andi", status: "Selesai", date: "26-10-2024" },
+    ],
+    2: [
+      { id: 1, name: "Bapak Cahyadi", status: "Selesai", date: "27-10-2024" },
+      { id: 2, name: "Bapak Danu", status: "Belum dimulai", date: "29-10-2024" },
+    ],
+    3: [
+      { id: 1, name: "Bapak Eko", status: "Selesai", date: "25-10-2024" },
+      { id: 2, name: "Bapak Fajar", status: "Sedang Berlangsung", date: "28-10-2024" },
+    ],
+    4: [
+      { id: 1, name: "Bapak Guntur", status: "Belum dimulai", date: "31-10-2024" },
+      { id: 2, name: "Bapak Hendra", status: "Selesai", date: "26-10-2024" },
+    ],
+    5: [
+      { id: 1, name: "Bapak Iwan", status: "Belum dimulai", date: "01-11-2024" },
+      { id: 2, name: "Bapak Joko", status: "Sedang Berlangsung", date: "29-10-2024" },
+    ],
+  };
+
+  const [currentPos, setCurrentPos] = useState(1);
+
+  const handleNext = () => {
+    setCurrentPos((prevPos) => (prevPos < 5 ? prevPos + 1 : 1));
+  };
+
+  const handlePrev = () => {
+    setCurrentPos((prevPos) => (prevPos > 1 ? prevPos - 1 : 5));
+  };
+
+  const data = posData[currentPos];
+
   const [showPopup, setShowPopup] = useState(false);
+  const [newEntry, setNewEntry] = useState({
+    name: '',
+    date: '',
+    location: ''
+  });
+
+  const handleChange = (e) => {
+    setNewEntry({
+      ...newEntry,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleAddData = () => {
+    console.log('Data Ditambahkan');
+    alert("Petugas berhasil ditambahkan!");
+    setShowPopup(false); 
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+
   const [showDeletePopup, setShowDeletePopup] = useState(false);
-  const [showEditPopup, setShowEditPopup] = useState(false);
-  const [editData, setEditData] = useState({ name: "", date: "", location: "" });
+const [deleteItemId, setDeleteItemId] = useState(null);
 
-  const handleAddClick = () => setShowPopup(true);
-  const handleClosePopup = () => setShowPopup(false);
+const handleDelete = () => {
+  console.log("Jadwal dengan ID", deleteItemId, "telah dihapus.");
+  setData((prevData) => prevData.filter(item => item.id !== deleteItemId));
+  setShowDeletePopup(false);
+};
 
-  const handleDeleteClick = () => setShowDeletePopup(true);
-  const handleCancelDelete = () => setShowDeletePopup(false);
+const handleCloseDeletePopup = () => {
+  console.log("Menutup popup");
+  setShowDeletePopup(false);
+};
 
-  const handleEditClick = (name, date, location) => {
-    setEditData({ name, date, location });
-    setShowEditPopup(true);
-  };
-  const handleCancelEdit = () => setShowEditPopup(false);
-  const handleSaveEdit = () => {
-    alert("Perubahan berhasil disimpan!");
-    setShowEditPopup(false);
-  };
+const openDeletePopup = (itemId) => {
+  console.log("Open delete popup for item with ID:", itemId);
+  setDeleteItemId(itemId);
+  setShowDeletePopup(true);
+};
+
 
   return (
     <div>
       <Navbar />
+
       <div className="table-container">
         <div className="table-text">
           <h1>Jadwal Ronda</h1>
         </div>
         <div className="item">
           <div className="pos-nav">
-            <button id="prev-pos">&lt;</button>
-            <span id="current-pos"></span>
-            <button id="next-pos">&gt;</button>
+            <button onClick={handlePrev}>&lt;</button>
+          <span>Pos {currentPos}</span>
+          <button onClick={handleNext}>&gt;</button>
           </div>
-          <button className="btn-add" onClick={handleAddClick}>
+          <button className="btn-add" onClick={() => setShowPopup(true)}>
             + Tambah Petugas
           </button>
         </div>
@@ -55,65 +117,90 @@ const WargaSiagaAdmin = () => {
             </tr>
           </thead>
           <tbody>
-            {[
-              { no: 1, name: "Bapak Aji", status: "Belum dimulai", date: "30-10-2024" },
-              { no: 2, name: "Bapak Budi", status: "Sedang Berlangsung", date: "28-10-2024" },
-              { no: 3, name: "Bapak Joko", status: "Selesai", date: "27-10-2024" },
-              { no: 4, name: "Bapak Andi", status: "Selesai", date: "26-10-2024" },
-            ].map((row) => (
-              <tr key={row.no}>
-                <td>{row.no}</td>
-                <td>{row.name}</td>
+            {data.map((item) => (
+              <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
                 <td>
-                  <span className={`status ${row.status.replace(" ", "-").toLowerCase()}`}>
-                    {row.status}
+                  <span
+                    className={`status ${
+                      item.status === "Belum dimulai"
+                        ? "not-started"
+                        : item.status === "Sedang Berlangsung"
+                        ? "in-progress"
+                        : "completed"
+                    }`}
+                  >
+                    {item.status}
                   </span>
                 </td>
-                <td>{row.date}</td>
+                <td>{item.date}</td>
                 <td>
-                  <button
-                    className="btn btn-delete"
-                    onClick={handleDeleteClick}
-                  >
-                    <i className="fas fa-trash-alt"></i>
+                  <button className="btn btn-delete" onClick={() => openDeletePopup(item.id)}>
+                    <i className="fas fa-trash"></i>
                   </button>
-                  <button
-                    className="btn btn-edit"
-                    onClick={() =>
-                      handleEditClick(row.name, row.date, "Pos 1")
-                    }
-                  >
-                    <i className="fas fa-edit"></i>
-                  </button>
+                  <button className="btn btn-edit"><i className="fas fa-edit"></i></button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <Footer />
+      <Footer />  
 
+      {/* Popup Tambah Petugas */}
       {showPopup && (
-        <div id="popup" className="popup-container">
+        <div id="popup" className="popup-container show">
           <div className="popup-content">
             <h2>Tambah Petugas</h2>
             <form>
               <div className="form-group">
                 <label htmlFor="nama">Nama</label>
-                <input type="text" id="nama" placeholder="Masukkan Nama" required />
+                <input
+                  type="text"
+                  id="nama"
+                  name="name"
+                  value={newEntry.name}
+                  onChange={handleChange}
+                  placeholder="Masukkan Nama"
+                  required
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="tanggal">Tanggal</label>
-                <input type="date" id="tanggal" required />
+                <input
+                  type="date"
+                  id="tanggal"
+                  name="date"
+                  value={newEntry.date}
+                  onChange={handleChange}
+                  required
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="lokasi-pos">Lokasi Pos</label>
-                <input type="text" id="lokasi-pos" placeholder="Contoh: Pos 1" required />
+                <input
+                  type="text"
+                  id="lokasi-pos"
+                  name="location"
+                  value={newEntry.location}
+                  onChange={handleChange}
+                  placeholder="Contoh: Pos 1"
+                  required
+                />
               </div>
-              <button type="submit" className="btn-save">
+              <button
+                type="button"
+                className="btn-save"
+                onClick={handleAddData}
+              >
                 Simpan
               </button>
-              <button type="button" className="btn-cancel" onClick={handleClosePopup}>
+              <button
+                type="button"
+                className="btn-cancel"
+                onClick={handleClosePopup}
+              >
                 Batal
               </button>
             </form>
@@ -121,73 +208,46 @@ const WargaSiagaAdmin = () => {
         </div>
       )}
 
-      {showDeletePopup && (
-        <div id="delete-popup" className="popup-container">
-          <div className="popup-contentdel">
-            <h2>Hapus Jadwal</h2>
-            <p>Jadwal yang telah dihapus tidak dapat dikembalikan.</p>
-            <div className="popup-actions">
-              <button id="confirm-delete" className="btn-delete-confirm">
-                Hapus
-              </button>
-              <button id="cancel-delete" className="btn-cancel" onClick={handleCancelDelete}>
-                Batalkan
-              </button>
-            </div>
+      {/* Popup Hapus Jadwal */}
+      <div id="delete-popup" className="popup-container">
+        <div className="popup-contentdel">
+          <h2>Hapus Jadwal</h2>
+          <p>Jadwal yang telah dihapus tidak dapat dikembalikan.</p>
+          <div className="popup-actions">
+            <button className="btn-delete-confirm" onClick={handleDelete}>
+              Hapus
+            </button>
+            <button className="btn-cancel" onClick={handleCloseDeletePopup}>
+              Batal
+            </button>
           </div>
         </div>
-      )}
+      </div>
 
-      {showEditPopup && (
-        <div id="edit-popup" className="popup-container">
-          <div className="popup-contentedit">
-            <h2>Edit Petugas</h2>
-            <form>
-              <div>
-                <label htmlFor="edit-name">Nama</label>
-                <input
-                  type="text"
-                  id="edit-name"
-                  value={editData.name}
-                  onChange={(e) =>
-                    setEditData({ ...editData, name: e.target.value })
-                  }
-                />
-              </div>
-              <div>
-                <label htmlFor="edit-date">Tanggal</label>
-                <input
-                  type="text"
-                  id="edit-date"
-                  value={editData.date}
-                  onChange={(e) =>
-                    setEditData({ ...editData, date: e.target.value })
-                  }
-                />
-              </div>
-              <div>
-                <label htmlFor="edit-location">Lokasi Pos</label>
-                <input
-                  type="text"
-                  id="edit-location"
-                  value={editData.location}
-                  onChange={(e) =>
-                    setEditData({ ...editData, location: e.target.value })
-                  }
-                />
-              </div>
-              <div className="popup-actions">
-                <button type="button" className="btn-save" onClick={handleSaveEdit}>
-                  Simpan
-                </button>
-                <button type="button" className="btn-cancel" onClick={handleCancelEdit}>
-                  Batalkan
-                </button>
-              </div>
-            </form>
-          </div>
+      {/* Popup Edit Petugas */}
+      <div id="edit-popup" className="popup-container">
+        <div className="popup-contentedit">
+          <h2>Edit Petugas</h2>
+          <form id="edit-form">
+            <div>
+              <label htmlFor="edit-name">Nama</label>
+              <input type="text" id="edit-name" placeholder="Masukkan Nama" />
+            </div>
+            <div>
+              <label htmlFor="edit-date">Tanggal</label>
+              <input type="text" id="edit-date" placeholder="HH/BB/TTTT" />
+            </div>
+            <div>
+              <label htmlFor="edit-location">Lokasi Pos</label>
+              <input type="text" id="edit-location" placeholder="Contoh: Pos 1" />
+            </div>
+            <div className="popup-actions">
+              <button type="button" id="save-edit" className="btn-save">Simpan</button>
+              <button type="button" id="cancel-edit" className="btn-cancel">Batalkan</button>
+            </div>
+          </form>
         </div>
-      )}
+      </div>
     </div>
   );
 };
