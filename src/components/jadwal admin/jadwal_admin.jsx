@@ -67,7 +67,7 @@ const WargaSiagaAdmin = () => {
     setShowPopup(false);
   };
 
-  const [showDeletePopup, setShowDeletePopup] = useState(false);
+const [showDeletePopup, setShowDeletePopup] = useState(false);
 const [deleteItemId, setDeleteItemId] = useState(null);
 
 const handleDelete = () => {
@@ -85,6 +85,43 @@ const openDeletePopup = (itemId) => {
   console.log("Open delete popup for item with ID:", itemId);
   setDeleteItemId(itemId);
   setShowDeletePopup(true);
+};
+
+const [showEditPopup, setShowEditPopup] = useState(false);
+const [editItem, setEditItem] = useState({
+  id: null,
+  name: "",
+  date: "",
+  location: "",
+});
+
+const openEditPopup = (item) => {
+  console.log("Open edit popup for item:", item);
+  setEditItem(item); 
+  setShowEditPopup(true); 
+};
+
+const handleEditChange = (e) => {
+  const { name, value } = e.target;
+  setEditItem((prev) => ({
+    ...prev,
+    [name]: value,
+  }));
+};
+
+const handleSaveEdit = () => {
+  console.log("Simpan perubahan untuk:", editItem);
+  const updatedData = posData[currentPos].map((item) =>
+    item.id === editItem.id ? editItem : item
+  );
+
+  posData[currentPos] = updatedData;
+  setShowEditPopup(false);
+};
+
+const handleCloseEditPopup = () => {
+  console.log("Menutup popup edit");
+  setShowEditPopup(false);
 };
 
 
@@ -139,7 +176,8 @@ const openDeletePopup = (itemId) => {
                   <button className="btn btn-delete" onClick={() => openDeletePopup(item.id)}>
                     <i className="fas fa-trash"></i>
                   </button>
-                  <button className="btn btn-edit"><i className="fas fa-edit"></i></button>
+                  <button className="btn btn-edit" onClick={() => openEditPopup(item.id)}>
+                    <i className="fas fa-edit"></i></button>
                 </td>
               </tr>
             ))}
@@ -209,45 +247,91 @@ const openDeletePopup = (itemId) => {
       )}
 
       {/* Popup Hapus Jadwal */}
-      <div id="delete-popup" className="popup-container">
-        <div className="popup-contentdel">
-          <h2>Hapus Jadwal</h2>
-          <p>Jadwal yang telah dihapus tidak dapat dikembalikan.</p>
-          <div className="popup-actions">
-            <button className="btn-delete-confirm" onClick={handleDelete}>
-              Hapus
-            </button>
-            <button className="btn-cancel" onClick={handleCloseDeletePopup}>
-              Batal
-            </button>
+      {showDeletePopup && (
+        <div id="delete-popup" className="popup-container show">
+          <div className="popup-contentdel">
+            <h2>Hapus Jadwal</h2>
+            <p>Jadwal yang telah dihapus tidak dapat dikembalikan.</p>
+            <div className="popup-actions">
+              <button
+                type="button"
+                className="btn-delete-confirm"
+                onClick={handleDelete}
+              >
+                Hapus
+              </button>
+              <button
+                type="button"
+                className="btn-cancel"
+                onClick={handleCloseDeletePopup}
+              >
+                Batal
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Popup Edit Petugas */}
-      <div id="edit-popup" className="popup-container">
-        <div className="popup-contentedit">
-          <h2>Edit Petugas</h2>
-          <form id="edit-form">
-            <div>
-              <label htmlFor="edit-name">Nama</label>
-              <input type="text" id="edit-name" placeholder="Masukkan Nama" />
-            </div>
-            <div>
-              <label htmlFor="edit-date">Tanggal</label>
-              <input type="text" id="edit-date" placeholder="HH/BB/TTTT" />
-            </div>
-            <div>
-              <label htmlFor="edit-location">Lokasi Pos</label>
-              <input type="text" id="edit-location" placeholder="Contoh: Pos 1" />
-            </div>
-            <div className="popup-actions">
-              <button type="button" id="save-edit" className="btn-save">Simpan</button>
-              <button type="button" id="cancel-edit" className="btn-cancel">Batalkan</button>
-            </div>
-          </form>
+      {showEditPopup && (
+        <div id="edit-popup" className="popup-container show">
+          <div className="popup-contentedit">
+            <h2>Edit Petugas</h2>
+            <form id="edit-form">
+              <div>
+                <label htmlFor="edit-name">Nama</label>
+                <input
+                  type="text"
+                  id="edit-name"
+                  name="name"
+                  value={editItem.name}
+                  onChange={handleEditChange}
+                  placeholder="Masukkan Nama"
+                />
+              </div>
+              <div>
+                <label htmlFor="edit-date">Tanggal</label>
+                <input
+                  type="date"
+                  id="edit-date"
+                  name="date"
+                  value={editItem.date}
+                  onChange={handleEditChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="edit-location">Lokasi Pos</label>
+                <input
+                  type="text"
+                  id="edit-location"
+                  name="location"
+                  value={editItem.location}
+                  onChange={handleEditChange}
+                  placeholder="Contoh: Pos 1"
+                />
+              </div>
+              <div className="popup-actions">
+                <button
+                  type="button"
+                  id="save-edit"
+                  className="btn-save"
+                  onClick={handleSaveEdit}
+                >
+                  Simpan
+                </button>
+                <button
+                  type="button"
+                  id="cancel-edit"
+                  className="btn-cancel"
+                  onClick={handleCloseEditPopup}
+                >
+                  Batalkan
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
