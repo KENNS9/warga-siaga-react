@@ -20,18 +20,14 @@ import Lokasi from "./components/lokasi/lokasi";
 import Edukasi1 from "./components/edukasi1/edukasi1";
 import Edukasi2 from "./components/edukasi2/edukasi2";
 import Admin from "./components/admin landing page/admin";
-import EdukasiAdmin from "./components/edukasi admin/edukasi_admin";
-import JadwalAdmin from "./components/jadwal admin/jadwal_admin";
-// import Pelaporan from "./components/pelaporan/pelaporan";
-// import { LaporanCard } from "./components/laporan-card/laporan-card";
-// import UploaderFile from "./components/uploader-file/uploader-file";
-import Admin from "./components/admin landing page/admin";
 import EdukasiAdmin from "./components/edukasi admin/eduksai_admin";
 import JadwalAdmin from "./components/jadwal admin/jadwal_admin";
 import PopupTambahPetugas from "./components/jadwal admin/PopupTambahPetugas";
 import PopupHapusJadwal from "./components/jadwal admin/PopupHapusJadwal";
 import PopupEditPetugas from "./components/jadwal admin/PopupEditPetugas";
-
+import Pelaporan from "./components/pelaporan/pelaporan";
+import Profile from "./components/profile/profile";
+import Settings from "./components/setting/settings";
 
 function App() {
   return (
@@ -56,16 +52,13 @@ function App() {
         <Route path="/edukasi2" element={<Edukasi2 />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/jadwal_admin" element={<JadwalAdmin />} />
-        <Route path="/edukasi_admin" element={<EdukasiAdmin />} />
-        {/* <Route path="/pelaporan" element={<Pelaporan />} />
-        <Route path="/laporan-card" element={<LaporanCard />} />
-        <Route path="/uploader-file" element={<UploaderFile />} /> */}
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/jadwal_admin" element={<JadwalAdmin />} />
         <Route path="/tambah_petugas" element={<PopupTambahPetugas />} />
         <Route path="/hapus_jadwal" element={<PopupHapusJadwal />} />
         <Route path="/edit+petugas" element={<PopupEditPetugas />} />
         <Route path="/edukasi_admin" element={<EdukasiAdmin />} />
+        <Route path="/pelaporan" element={<Pelaporan />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/settings" element={<Settings />} />
 
         
       </Routes>

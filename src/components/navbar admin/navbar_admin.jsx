@@ -7,9 +7,9 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg fixed-top">
       <div className="container">
         {/* Logo Section */}
-        <a className="navbar-brand d-flex align-items-center" href="home_page.html">
+        <Link to="/" className="navbar-brand d-flex align-items-center">
           <img src="/images/logo.png" alt="Logo" className="logo" />
-        </a>
+        </Link>
 
         {/* Toggle button for mobile view */}
         <button
@@ -40,8 +40,8 @@ const Navbar = () => {
 
           {/* Profile Section */}
           <div className="profile d-flex align-items-center">
-            <img src="Foto/profile-pic.jpg" alt="Profile Picture" className="profile-pic" />
-            <span id="username">Halo, User</span>
+            <img src="/images/profile-pic.jpg" alt="Profile Picture" className="profile-pic" />
+            <span id="username">Admin</span>
           </div>
         </div>
       </div>

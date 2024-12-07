@@ -64,7 +64,7 @@ export const TableRonda = () => {
 
   return (
     <table className="w-full">
-      <thead>
+      <thead className="bg-gray-100 text-primary">
         <tr className="border-b border-primary-hijau">
           <th>Lokasi</th>
           <th>Tanggal</th>
@@ -72,7 +72,7 @@ export const TableRonda = () => {
           <th>Laporan</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className="bg-white text-gray-700">
         {rondaData.map((data, index) => (
           <tr key={index} className="text-center">
             <td>{data.lokasi}</td>

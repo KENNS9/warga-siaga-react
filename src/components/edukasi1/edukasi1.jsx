@@ -12,7 +12,7 @@ const App = () => {
       <Navbar />
       <div className="edukasi">
         <h1>Video Edukasi</h1>
-        <div className="grid">
+        <div className="artikel-grid">
           <Link className="artikel" to="/edukasi2">
             <img
               alt="Petugas keamanan sedang melakukan patroli"

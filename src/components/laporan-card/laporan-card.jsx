@@ -1,5 +1,5 @@
 import { useState } from "react";
-import '../setting/index.css'
+import '../setting/item.css'
 
 // eslint-disable-next-line react/prop-types
 export const LaporanCard = ({ name, time, address, description, imageUrl, avatarUrl }) => {

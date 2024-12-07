@@ -169,7 +169,7 @@ td {
   @apply py-4;
 }
 
-/* tr,
+tr,
 th {
   @apply border-b border-primary-tint-4;
-} */
+}

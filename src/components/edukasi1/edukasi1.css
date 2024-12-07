@@ -23,7 +23,7 @@ body {
   line-height: 90px;
   margin-top: 50px;
 }
-.grid {
+.artikel-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;

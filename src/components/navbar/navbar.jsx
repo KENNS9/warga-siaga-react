@@ -7,7 +7,7 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg fixed-top">
             <div className="container">
                 {/* Logo Section */}
-                <Link to="/home_page" className="navbar-brand d-flex align-items-center">
+                <Link to="/" className="navbar-brand d-flex align-items-center">
                     <img src="/images/logo.png" alt="Logo" className="logo" />
                 </Link>
 
@@ -45,14 +45,14 @@ const Navbar = () => {
                     </ul>
 
                     {/* Profile Section */}
-                    <div className="profile d-flex align-items-center">
+                    <Link to="/profile" className="profile d-flex align-items-center">
                         <img 
                             src="/images/profile-pic.jpg" 
                             alt="Profile Picture" 
                             className="profile-pic" 
                         />
                         <span id="username">Halo, User</span>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </nav>

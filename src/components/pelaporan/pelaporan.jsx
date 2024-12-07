@@ -1,11 +1,14 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 import { LaporanCard } from "../laporan-card/laporan-card";
-import '../setting/index.css'
 import DragNdrop from "../uploader-file/uploader-file";
 import Navbar from '../navbar/navbar'; 
 import Footer from '../footer/footer';
+import '../setting/item.css';
 
-const laporanData = [
+
+
+const Pelaporan = () => {
+  const laporanData = [
   {
     id: 1,
     name: "Bapak Aji",
@@ -117,8 +120,6 @@ const laporanData = [
       "https://images.pexels.com/photos/1031698/pexels-photo-1031698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
 ];
-
-export const Pelaporan = () => {
   // Form state
   const [formData, setFormData] = useState({
     name: "",
@@ -153,7 +154,7 @@ export const Pelaporan = () => {
   };
 
   return (
-    <main className="bg-primaryBg min-h-screen">
+    <div className="bg-primaryBg min-h-screen">
       <Navbar />
       <div className="container py-16 grid grid-cols-2 gap-10">
         <div>
@@ -252,6 +253,8 @@ export const Pelaporan = () => {
         </div>
       </div>
       <Footer />
-    </main>
+    </div>
   );
 };
+
+export default Pelaporan;

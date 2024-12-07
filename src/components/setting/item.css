@@ -6,7 +6,7 @@
 
 @layer base {
   html {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
   }
 }
 
@@ -169,7 +169,8 @@ td {
   @apply py-4;
 }
 
-/* tr,
+tr,
 th {
   @apply border-b border-primary-tint-4;
-} */
+}
+

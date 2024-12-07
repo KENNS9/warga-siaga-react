@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { EditProfile } from "../components/edit-profile";
-import { Keamanan } from "../components/keamanan";
-import { Iuran } from "../components/iuran";
+import { EditProfile } from "../edit-profile/edit-profile";
+import { Keamanan } from "../keamanan/keamanan";
+import { Iuran } from "../iuran/iuran";
 import clsx from "clsx";
-import { Bantuan } from "../components/bantuan";
-import '../setting/index.css'
+import { Bantuan } from "../bantuan/bantuan";
+import './item.css'
+import Navbar from '../navbar/navbar'; 
+import Footer from '../footer/footer';
 
-export const Settings = () => {
+const Settings = () => {
   const [activeTab, setActiveTab] = useState("edit-profile");
 
   const handleActiveTab = (name) => {
@@ -15,6 +17,7 @@ export const Settings = () => {
 
   return (
     <main className="bg-primaryBg min-h-screen py-20">
+      <Navbar />
       <div className="container">
         <div className="bg-[#F5F7FA] white rounded-[32px] grid grid-cols-12 p-12">
           <div className="col-span-3">
@@ -34,6 +37,9 @@ export const Settings = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 };
+
+export default Settings;

@@ -1,10 +1,13 @@
-import { TableRonda } from "../components/table-ronda";
+import React from 'react';
+import { TableRonda } from "../table-ronda/table-ronda";
 import { BiCog, BiCamera } from "react-icons/bi";
-import '../setting/index.css'
+import Navbar from '../navbar/navbar'; 
+import Footer from '../footer/footer';
 
-export const Profile = () => {
+const Profile = () => {
   return (
     <main className="bg-primaryBg min-h-screen py-20">
+      <Navbar />  
       <div className="container grid gap-10">
         <div className="rounded-[32px] overflow-hidden">
           <div className="header h-[300px] bg-[url('/images/bg-profile.png')] bg-cover bg-center p-8">
@@ -13,7 +16,7 @@ export const Profile = () => {
                 <BiCamera size={36} className="text-secondary-dark-blue" />
               </button>
               <a
-                href="/settings"
+                href="../settings"
                 className="bg-white rounded-full h-10 w-10 flex items-center justify-center"
               >
                 <BiCog size={36} className="text-secondary-dark-blue" />
@@ -50,6 +53,9 @@ export const Profile = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 };
+
+export default Profile;

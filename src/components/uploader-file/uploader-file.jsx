@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-// import { AiOutlineCheckCircle } from "react-icons/ai";
-// import { MdClear } from "react-icons/md";
-import '../setting/index.css'
+import { AiOutlineCheckCircle } from "react-icons/ai";
+import { MdClear } from "react-icons/md";
+import '../setting/item.css'
 
 // eslint-disable-next-line react/prop-types
 const DragNdrop = ({ onFilesSelected, width, height }) => {
@@ -35,6 +35,7 @@ const DragNdrop = ({ onFilesSelected, width, height }) => {
   };
 
   useEffect(() => {
+    console.log("useEffect triggered");
     onFilesSelected(files);
     // Clean up object URLs when component unmounts or files change
     return () => {
