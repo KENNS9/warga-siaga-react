@@ -38,8 +38,8 @@ const AdminPage = () => {
           </div>
         </div>
 
-        <div className="grid">
-          <a className="artikel" href="edukasi2.html">
+        <div className="artikel-grid">
+          <a className="artikel" to="/edukasi2">
             <img alt="Petugas keamanan sedang melakukan patroli" src= "/images/ronda.jpg" />
             <div className="card-content">
               <h3>Tips &amp; Trick - Beberapa tips agar ronda lebih efektif dan aman.</h3>
