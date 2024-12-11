@@ -38,43 +38,43 @@ const AdminPage = () => {
           </div>
         </div>
 
-        <div className="grid">
-          <a className="artikel" href="edukasi2.html">
+        <div className="artikel-grid">
+          <a className="artikel" to="/edukasi2">
             <img alt="Petugas keamanan sedang melakukan patroli" src= "/images/ronda.jpg" />
             <div className="card-content">
               <h3>Tips &amp; Trick - Beberapa tips agar ronda lebih efektif dan aman.</h3>
               <p>Admin. 950 tayangan. 7 hari lalu</p>
             </div>
           </a>
-          <a className="artikel" href="page2.html">
+          <a className="artikel" to="/page2">
             <img alt="Seseorang sedang melaporkan kejadian di website" src="/images/img2.jpg" />
             <div className="card-content">
               <h3>Cara melaporkan kejadian di website WargaSiaga. Sangat Mudah!</h3>
               <p>Admin. 47 tayangan. 1 hari lalu</p>
             </div>
           </a>
-          <a className="artikel" href="page3.html">
+          <a className="artikel" to="/page2">
             <img alt="Pemanfaatan teknologi untuk mendukung keamanan lingkungan" src="/images/img3.jpg" />
             <div className="card-content">
               <h3>Pemanfaatan teknologi untuk mendukung keamanan lingkungan.</h3>
               <p>Admin. 123 tayangan. 3 hari lalu</p>
             </div>
           </a>
-          <a className="artikel" href="page4.html">
+          <a className="artikel" to="/page2">
             <img alt="Petugas keamanan sedang berjaga di malam hari" src="/images/img4.jpg" />
             <div className="card-content">
               <h3>Keamanan Lingkungan: Tanggung jawab kita bersama.</h3>
               <p>Admin. 347 tayangan. 2 minggu lalu</p>
             </div>
           </a>
-          <a className="artikel" href="page5.html">
+          <a className="artikel" to="/page2">
             <img alt="Ilustrasi penyuluhan kepada masyarakat" src="https://storage.googleapis.com/a1aa/image/Vly11efaXjq0KU1CNcGxRPjvO75W7oCmUWLCyfjKFm8jQNknA.jpg" />
             <div className="card-content">
               <h3>Edukasi - Penyuluhan kepada masyarakat terkait keamanan lingkungan.</h3>
               <p>Admin. 2350 tayangan. 4 bulan lalu</p>
             </div>
           </a>
-          <a className="artikel" href="page6.html">
+          <a className="artikel" to="/page2">
             <img alt="Petugas ronda sedang berpatroli" src="/images/img6.jpg" />
             <div className="card-content">
               <h3>Mengintip tugas petugas ronda: Menjaga kenyamanan dan keamanan warga.</h3>
