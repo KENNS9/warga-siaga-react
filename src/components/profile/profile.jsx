@@ -1,30 +1,30 @@
-import React from 'react';
+import React from "react";
 import { TableRonda } from "../table-ronda/table-ronda";
 import { BiCog, BiCamera } from "react-icons/bi";
-import Navbar from '../navbar/navbar'; 
-import Footer from '../footer/footer';
+import Navbar from "../navbar/navbar";
+import Footer from "../footer/footer";
 
 const Profile = () => {
   return (
-    <main className="bg-primaryBg min-h-screen py-20">
-      <Navbar />  
-      <div className="container grid gap-10">
-        <div className="rounded-[32px] overflow-hidden">
-          <div className="header h-[300px] bg-[url('/images/bg-profile.png')] bg-cover bg-center p-8">
-            <div className="flex items-center justify-end gap-3 w-full ">
-              <button className="bg-white rounded-full h-10 w-10 flex items-center justify-center">
-                <BiCamera size={36} className="text-secondary-dark-blue" />
+    <div className="flex flex-col min-h-screen bg-primaryBg">
+      <Navbar />
+      <main className="flex-grow container grid grid-cols-1 gap-10 py-20">
+        <div className="rounded-[32px] relative overflow-hidden bg-[url('/images/bg-profile.png')] bg-cover bg-center bg-no-repeat">
+          <div className="header h-[100px] p-8">
+            <div className="h-fit w-fit absolute top-6 right-6 flex items-center gap-2">
+              <button className="bg-white rounded-full h-8 w-8 flex items-center justify-center">
+                <BiCamera size={28} className="text-secondary-dark-blue" />
               </button>
               <a
                 href="../settings"
-                className="bg-white rounded-full h-10 w-10 flex items-center justify-center"
+                className="bg-white rounded-full h-8 w-8 flex items-center justify-center"
               >
-                <BiCog size={36} className="text-secondary-dark-blue" />
+                <BiCog size={28} className="text-secondary-dark-blue" />
               </a>
             </div>
           </div>
-          <div className="bg-white px-12 pb-12 min-h-[200px]">
-            <div className="flex flex-col gap-5 mt-[-60px] absolute">
+          <div className="bg-white px-12 pb-12 min-h-[160px]">
+            <div className="flex flex-col gap-2 mt-[-60px] absolute">
               <div className="rounded-full h-[120px] w-[120px] bg-slate-500 relative">
                 <img
                   className="h-full w-full object-cover rounded-full"
@@ -43,19 +43,20 @@ const Profile = () => {
           </div>
         </div>
 
-        <div>
-          <button className="mx-4 px-6 py-3 border-b border-primary-hijau">
-            Data Ronda
+        <div className="flex flex-col items-start">
+          <button className="mx-4 px-6 py-3 font-semibold">
+            <span className="border-b-2 border-primary-hijau">Data Ronda</span>
           </button>
 
-          <div className="bg-white p-6 mt-4 rounded-[32px]">
+          <div className="bg-white p-6 mt-1 rounded-[32px] w-full">
             <TableRonda />
           </div>
         </div>
-      </div>
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 };
+
 
 export default Profile;

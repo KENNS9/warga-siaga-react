@@ -8,6 +8,9 @@ export default {
     "./src/components/profile/profile.jsx",
     "./src/components/table-ronda/table-ronda.jsx",
     "./src/components/setting/settings.jsx",
+    "./src/components/edit-profile/edit-profile.jsx",
+    "./src/components/keamanan/keamanan.jsx",
+    "./src/components/iuran/iuran.jsx",
   ],
   theme: {
     container: {
